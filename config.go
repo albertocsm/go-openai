@@ -28,7 +28,7 @@ const defaultAssistantVersion = "v2" // upgrade to v2 to support vector store
 
 // ClientConfig is a configuration of a client.
 type ClientConfig struct {
-	authToken string
+	AuthToken string
 
 	BaseURL              string
 	OrgID                string
@@ -43,7 +43,7 @@ type ClientConfig struct {
 
 func DefaultConfig(authToken string) ClientConfig {
 	return ClientConfig{
-		authToken:        authToken,
+		AuthToken:        authToken,
 		BaseURL:          openaiAPIURLv1,
 		APIType:          APITypeOpenAI,
 		AssistantVersion: defaultAssistantVersion,
@@ -57,7 +57,7 @@ func DefaultConfig(authToken string) ClientConfig {
 
 func DefaultAzureConfig(apiKey, baseURL string) ClientConfig {
 	return ClientConfig{
-		authToken:  apiKey,
+		AuthToken:  apiKey,
 		BaseURL:    baseURL,
 		OrgID:      "",
 		APIType:    APITypeAzure,
